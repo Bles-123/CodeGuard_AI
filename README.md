@@ -33,6 +33,9 @@ Most "AI code review" tools stop at step 1 — the AI reads your code and gives 
 |AI Tests|
 | ![Test](screenshot/test.png)|
 
+|AI Results|
+|![Result](screenshot/result.png)|
+
 ---
 
 ## Architecture
