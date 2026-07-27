@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #12161C;
+    --panel: #1A2029;
+    --panel-hover: #1F2630;
+    --border: #2A323D;
+    --text: #E4E7EB;
+    --text-muted: #8B95A1;
+    --amber: #E8A33D;
+    --amber-dim: #6B5530;
+    --pass: #4FB477;
+    --fail: #D9645A;
+    --pass-bg: rgba(79, 180, 119, 0.1);
+    --fail-bg: rgba(217, 100, 90, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ---------- Layout shell ---------- */
+.shell {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+}
+
+.topbar {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+}
+
+.topbar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wordmark {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.wordmark span {
+    color: var(--amber);
+}
+
+.nav-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 24px;
+    text-transform: uppercase;
+    transition: color 0.15s ease;
+}
+
+.nav-links a:hover {
+    color: var(--amber);
+}
+
+/* ---------- Typography ---------- */
+.eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin: 0 0 8px;
+}
+
+h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 40px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.meta strong {
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* ---------- Panels ---------- */
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+pre {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 18px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.review-box {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    padding: 20px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* ---------- Verdict stamp (signature element) ---------- */
+.verdict {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transform: rotate(-1.5deg);
+    margin-bottom: 4px;
+}
+
+.verdict.PASSED { color: var(--pass); background: var(--pass-bg); }
+.verdict.FAILED { color: var(--fail); background: var(--fail-bg); }
+.verdict.PARTIAL { color: var(--amber); background: rgba(232, 163, 61, 0.1); }
+.verdict.COMPILE_ERROR,
+.verdict.ERROR,
+.verdict.TIMEOUT,
+.verdict.UNKNOWN { color: var(--text-muted); background: rgba(139, 149, 161, 0.1); }
+
+.verdict-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.verdict-time {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding: 10px 20px;
+    background: var(--amber);
+    color: #12161C;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--amber);
+    color: var(--amber);
+    opacity: 1;
+}
+
+/* ---------- Form ---------- */
+label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 20px 0 8px;
+}
+
+input, textarea {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--amber);
+}
+
+textarea {
+    height: 240px;
+    resize: vertical;
+}
+
+/* ---------- Dashboard table ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+tr:hover td {
+    background: var(--panel-hover);
+}
+
+td a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+td a:hover {
+    color: var(--amber);
+}
+
+.id-cell {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+}
