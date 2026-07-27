@@ -24,7 +24,7 @@ Most "AI code review" tools stop at step 1 — the AI reads your code and gives 
 
 | Dashboard | Submit Form |
 |---|---|
-| ![Dashboard](screenshots/dashboard.png) | ![Submit](screenshots/submit.png) |
+| ![Dashboard](screenshots/dashboard.png) | ![Submit](Screenshot 2026-07-27 164425.png) |
 
 | AI Review + Verdict |
 |---|
